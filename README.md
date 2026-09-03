@@ -50,11 +50,3 @@ Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 ├── styles/             # estilos globais
 └── README.md
 ```
-<!-- ajuste essa árvore pra bater com a estrutura real do seu projeto -->
-
-## Sobre este projeto
-
-Esse é um projeto de portfólio desenvolvido por **Lucas** como parte do meu trabalho de criação de landing pages para pequenos negócios.
-
-- 💼 [Meu portfólio](#)
-- 📧 [contato](#)
