@@ -78,20 +78,20 @@ export function Location() {
           </ScrollReveal>
 
           {/* Google Maps Embed iframe */}
-          <ScrollReveal direction="left" delay={0.2} className="lg:col-span-7 min-h-[350px] lg:min-h-full rounded-2xl overflow-hidden border border-border/70 bg-card shadow-xl">
+          <ScrollReveal direction="left" delay={0.2} className="lg:col-span-7 h-[300px] sm:h-[380px] lg:h-full rounded-2xl overflow-hidden border border-border/70 bg-card shadow-xl">
             {siteConfig.contact.address.googleMapsIframeUrl ? (
               <iframe
                 src={siteConfig.contact.address.googleMapsIframeUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "380px" }}
+                style={{ border: 0, width: "100%", height: "100%" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title={`Mapa de localização de ${siteConfig.brand.name}`}
               />
             ) : (
-              <div className="w-full h-full min-h-[350px] flex items-center justify-center bg-muted text-muted-foreground text-sm">
+              <div className="w-full h-full min-h-[300px] flex items-center justify-center bg-muted text-muted-foreground text-sm">
                 [Google Maps Iframe Placeholder]
               </div>
             )}

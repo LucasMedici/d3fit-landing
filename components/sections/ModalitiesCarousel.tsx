@@ -8,7 +8,101 @@ import CMSSliderPro from "@/components/ui/CMSSliderPro"
 import { ScrollReveal } from "@/components/shared/ScrollReveal"
 
 export function ModalitiesCarousel() {
-  const images = ["/hero1.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg"]
+  const images = ["/musculacao.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg"]
+
+  const mobileCards = (
+    <div className="flex gap-4 w-full">
+      {siteConfig.modalities.items.map((item, index) => (
+        <div
+          key={item.id}
+          className="rounded-2xl bg-card border border-border/70 p-6 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-primary/50 group relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-md border border-secondary/30">
+                {item.tag || `0${index + 1}`}
+              </span>
+              <span className="font-heading font-black text-2xl text-muted-foreground/30 group-hover:text-primary/40 transition-colors">
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 className="font-heading text-xl font-bold text-foreground uppercase tracking-tight">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-muted-foreground font-normal leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <div className="mt-6 pt-5 border-t border-border/40 relative h-52 rounded-xl overflow-hidden bg-muted">
+            <Image
+              src={images[index % images.length]}
+              alt={item.title}
+              fill
+              sizes="100vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
+              <span className="text-sm font-bold text-white uppercase tracking-wider">
+                {item.title} — D3FIT
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+
+  const desktopCards = (
+    <div className="flex gap-6 w-full">
+      {siteConfig.modalities.items.map((item, index) => (
+        <div
+          key={item.id}
+          className="rounded-2xl bg-card border border-border/70 p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-primary/50 group relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-md border border-secondary/30">
+                {item.tag || `0${index + 1}`}
+              </span>
+              <span className="font-heading font-black text-2xl text-muted-foreground/30 group-hover:text-primary/40 transition-colors">
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground uppercase tracking-tight">
+              {item.title}
+            </h3>
+
+            <p className="text-sm sm:text-base text-muted-foreground font-normal leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-border/40 relative h-64 rounded-xl overflow-hidden bg-muted">
+            <Image
+              src={images[index % images.length]}
+              alt={item.title}
+              fill
+              sizes="33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
+              <span className="text-sm font-bold text-white uppercase tracking-wider">
+                {item.title} — D3FIT
+              </span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 
   return (
     <section id="modalities" className="py-20 sm:py-28 bg-card/40 border-b border-border/30 overflow-hidden">
@@ -25,7 +119,7 @@ export function ModalitiesCarousel() {
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-foreground">
                 {siteConfig.modalities.title}
               </h2>
-              <p className="text-base sm:text-lg text-muted-foreground font-normal leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+              <p className="text-base sm:text-lg text-muted-foreground font-normal leading-relaxed">
                 {siteConfig.modalities.subtitle}
               </p>
             </div>
@@ -33,81 +127,57 @@ export function ModalitiesCarousel() {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal direction="up" delay={0.2} className="container mx-auto px-12 sm:px-16 relative">
-        <CMSSliderPro
-          layout={{ items: 3, gap: 24 }}
-          playback={{ autoPlay: false, loop: true }}
-          navigation={{ draggable: true, keyboard: true }}
-          arrows={{
-            show: true,
-            type: "Split",
-            variant: "Outline",
-            size: 44,
-            radius: 12,
-            fill: "#ffffff",
-            borderColor: "rgba(255, 255, 255, 0.2)",
-            backdrop: "rgba(255, 255, 255, 0.05)",
-            inset: -56,
-          }}
-          dots={{
-            type: "Dots",
-            alignment: "Bottom Center",
-            size: 8,
-            activeFill: "#E3402D",
-            fill: "rgba(255,255,255,0.3)",
-            backdrop: "transparent",
-            inset: 24,
-          }}
-          content={
-            <div className="flex gap-6 w-full">
-              {siteConfig.modalities.items.map((item, index) => (
-                <div
-                  key={item.id}
-                  className="rounded-2xl bg-card border border-border/70 p-6 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-primary/50 group relative overflow-hidden"
-                >
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <ScrollReveal direction="up" delay={0.2} className="relative">
+        {/* Mobile: 1 card por vez, com dots e drag */}
+        <div className="md:hidden px-4 sm:px-6">
+          <CMSSliderPro
+            layout={{ items: 1, gap: 16 }}
+            playback={{ autoPlay: false, loop: true }}
+            navigation={{ draggable: true, keyboard: true }}
+            arrows={{ show: false }}
+            dots={{
+              type: "Dots",
+              alignment: "Bottom Center",
+              size: 8,
+              activeFill: "#E3402D",
+              fill: "rgba(255,255,255,0.3)",
+              backdrop: "transparent",
+              inset: 16,
+            }}
+            content={mobileCards}
+          />
+        </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-md border border-secondary/30">
-                        {item.tag || `0${index + 1}`}
-                      </span>
-                      <span className="font-heading font-black text-2xl text-muted-foreground/30 group-hover:text-primary/40 transition-colors">
-                        0{index + 1}
-                      </span>
-                    </div>
-
-                    <h3 className="font-heading text-2xl font-bold text-foreground uppercase tracking-tight">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-sm sm:text-base text-muted-foreground font-normal leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="mt-8 pt-6 border-t border-border/40 relative h-56 sm:h-64 rounded-xl overflow-hidden bg-muted">
-                    <Image
-                      src={images[index % images.length]}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-4">
-                      <span className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
-                        {item.title} — D3FIT
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          }
-        />
+        {/* Desktop: 3 cards com arrows externas */}
+        <div className="hidden md:block container mx-auto px-12 md:px-16">
+          <CMSSliderPro
+            layout={{ items: 3, gap: 24 }}
+            playback={{ autoPlay: false, loop: true }}
+            navigation={{ draggable: true, keyboard: true }}
+            arrows={{
+              show: true,
+              type: "Split",
+              variant: "Outline",
+              size: 44,
+              radius: 12,
+              fill: "#ffffff",
+              borderColor: "rgba(255, 255, 255, 0.2)",
+              backdrop: "rgba(255, 255, 255, 0.05)",
+              inset: -56,
+            }}
+            dots={{
+              type: "Dots",
+              alignment: "Bottom Center",
+              size: 8,
+              activeFill: "#E3402D",
+              fill: "rgba(255,255,255,0.3)",
+              backdrop: "transparent",
+              inset: 24,
+            }}
+            content={desktopCards}
+          />
+        </div>
       </ScrollReveal>
     </section>
   )
 }
-
-

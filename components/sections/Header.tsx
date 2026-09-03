@@ -11,7 +11,7 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/90 backdrop-blur-md transition-all">
       <div className="container mx-auto flex h-16 sm:h-20 items-center justify-between px-4 sm:px-6">
         <a href="#hero" className="flex items-center space-x-2 group">
-          <span className="font-heading text-2xl sm:text-3xl font-black tracking-tighter text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
+          <span className="font-heading text-3xl sm:text-3xl font-black tracking-tighter text-foreground group-hover:text-primary transition-colors flex items-center gap-1.5">
             {siteConfig.brand.name}
             <span className="inline-block w-2 h-2 rounded-full bg-primary" />
           </span>
@@ -30,14 +30,13 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Header CTA & Mobile Menu */}
         <div className="flex items-center space-x-3">
           <Button
             asChild
             size="sm"
-            className="hidden sm:inline-flex relative group overflow-hidden bg-primary hover:bg-primary/95 text-primary-foreground font-bold px-4 sm:px-5 py-2.5 text-xs tracking-wider uppercase rounded-xl border border-white/20 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/45 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all duration-300"
+            className="hidden md:inline-flex relative group overflow-hidden bg-primary hover:bg-primary/95 text-primary-foreground font-bold px-4 sm:px-5 py-2.5 text-xs tracking-wider uppercase rounded-xl border border-white/20 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/45 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all duration-300"
           >
-            <a href={siteConfig.hero.primaryCta.href} className="inline-flex items-center gap-2">
+            <a href={siteConfig.hero.primaryCta.href} className="inline-flex items-center gap-1.5">
               {/* Shimmer sweep effect */}
               <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer pointer-events-none" />
               

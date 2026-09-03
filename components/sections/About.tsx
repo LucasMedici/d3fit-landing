@@ -114,11 +114,11 @@ export function About() {
             </ScrollReveal>
 
             {/* The 3 Method Pillars */}
-            <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               {siteConfig.about.highlights.map((highlight, index) => (
-                <StaggerItem
+                  <StaggerItem
                   key={index}
-                  className="p-5 rounded-xl border border-border/70 bg-card/80 space-y-3 hover:border-primary/50 transition-all hover:bg-card group"
+                  className="p-4 rounded-xl border border-border/70 bg-card/80 space-y-2 hover:border-primary/50 transition-all hover:bg-card group"
                 >
                   <div className="p-2.5 w-fit rounded-lg bg-background border border-border/60 group-hover:border-primary/40 transition-colors">
                     {iconMap[highlight.iconName] || <CheckCircle2 className="w-5 h-5 text-primary" />}

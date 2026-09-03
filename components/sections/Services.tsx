@@ -52,7 +52,7 @@ export function Services() {
                     </CardTitle>
                   </div>
 
-                  <CardDescription className="text-xs sm:text-sm text-muted-foreground min-h-[38px] leading-relaxed">
+                  <CardDescription className="text-xs sm:text-sm text-muted-foreground min-h-0 sm:min-h-[38px] leading-relaxed">
                     {item.description}
                   </CardDescription>
 
