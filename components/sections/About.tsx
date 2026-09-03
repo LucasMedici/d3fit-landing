@@ -118,15 +118,17 @@ export function About() {
               {siteConfig.about.highlights.map((highlight, index) => (
                   <StaggerItem
                   key={index}
-                  className="p-4 rounded-xl border border-border/70 bg-card/80 space-y-2 hover:border-primary/50 transition-all hover:bg-card group"
+                  className="p-3.5 sm:p-4 rounded-xl border border-border/70 bg-card/80 space-y-1.5 sm:space-y-2 hover:border-primary/50 transition-all hover:bg-card group"
                 >
-                  <div className="p-2.5 w-fit rounded-lg bg-background border border-border/60 group-hover:border-primary/40 transition-colors">
-                    {iconMap[highlight.iconName] || <CheckCircle2 className="w-5 h-5 text-primary" />}
+                  <div className="flex items-center gap-3 sm:flex-col sm:items-start sm:gap-2">
+                    <div className="p-2 sm:p-2.5 w-fit shrink-0 rounded-lg bg-background border border-border/60 group-hover:border-primary/40 transition-colors">
+                      {iconMap[highlight.iconName] || <CheckCircle2 className="w-5 h-5 text-primary" />}
+                    </div>
+                    <h3 className="font-heading font-bold text-base text-foreground uppercase tracking-wide group-hover:text-primary transition-colors">
+                      {highlight.title}
+                    </h3>
                   </div>
-                  <h3 className="font-heading font-bold text-base text-foreground uppercase tracking-wide group-hover:text-primary transition-colors">
-                    {highlight.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-snug sm:leading-relaxed">
                     {highlight.description}
                   </p>
                 </StaggerItem>

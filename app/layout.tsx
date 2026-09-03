@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Plus_Jakarta_Sans, Barlow } from "next/font/google"
 import "./globals.css"
 import { siteConfig } from "@/content/site.config"
@@ -17,6 +17,13 @@ const fontHeading = Barlow({
   weight: ["600", "700", "800", "900"],
   display: "swap",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0a0a0a",
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.siteUrl),

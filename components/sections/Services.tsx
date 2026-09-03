@@ -28,11 +28,11 @@ export function Services() {
         </ScrollReveal>
 
         {/* Pricing / Services Grid */}
-        <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8 items-stretch max-w-6xl mx-auto">
           {siteConfig.services.items.map((item) => (
             <StaggerItem key={item.id} className="flex">
               <Card
-                className={`flex flex-col justify-between relative transition-all duration-300 rounded-2xl p-2 w-full ${
+                className={`flex flex-col justify-between relative transition-all duration-300 rounded-2xl p-0 sm:p-2 w-full ${
                   item.popular
                     ? "border-2 border-primary bg-card/95 shadow-2xl shadow-primary/10 md:-translate-y-2"
                     : "border border-border/60 bg-card/70 hover:border-border hover:bg-card/90 shadow-lg"
@@ -45,7 +45,7 @@ export function Services() {
                   </div>
                 )}
 
-                <CardHeader className="space-y-3 pt-6 sm:pt-8 px-5 sm:px-6">
+                <CardHeader className="space-y-2 sm:space-y-3 pt-5 sm:pt-8 pb-3 sm:pb-6 px-5 sm:px-6">
                   <div className="flex justify-between items-center">
                     <CardTitle className="font-heading text-2xl font-black text-foreground uppercase tracking-tight">
                       {item.title}
@@ -57,8 +57,8 @@ export function Services() {
                   </CardDescription>
 
                   {item.price && (
-                    <div className="pt-3 pb-2 flex items-baseline space-x-1 border-b border-border/50">
-                      <span className="font-heading text-4xl sm:text-5xl font-black text-foreground tracking-tight">
+                    <div className="pt-2 pb-1.5 sm:pt-3 sm:pb-2 flex items-baseline space-x-1 border-b border-border/50">
+                      <span className="font-heading text-3xl sm:text-5xl font-black text-foreground tracking-tight">
                         {item.price}
                       </span>
                       {item.period && (
@@ -70,8 +70,8 @@ export function Services() {
                   )}
                 </CardHeader>
 
-                <CardContent className="flex-1 space-y-3 py-4 px-5 sm:px-6">
-                  <ul className="space-y-3 text-xs sm:text-sm text-foreground/80">
+                <CardContent className="flex-1 space-y-3 py-3 sm:py-4 px-5 sm:px-6">
+                  <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-foreground/80">
                     {item.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start space-x-2.5">
                         <div className="p-0.5 rounded-full bg-primary/10 text-primary shrink-0 mt-0.5">
@@ -83,7 +83,7 @@ export function Services() {
                   </ul>
                 </CardContent>
 
-                <CardFooter className="pt-4 px-5 sm:px-6 pb-5 sm:pb-6">
+                <CardFooter className="pt-3 sm:pt-4 px-5 sm:px-6 pb-4 sm:pb-6">
                   <Button
                     asChild
                     variant={item.popular ? "default" : "outline"}

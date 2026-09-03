@@ -24,7 +24,7 @@ export function MobileMenu() {
         <Button
           variant="outline"
           size="icon"
-          className="md:hidden border-border/70 bg-card hover:bg-muted text-foreground"
+          className="lg:hidden border-border/70 bg-card hover:bg-muted text-foreground"
           aria-label="Abrir menu de navegação"
           id="mobile-menu-trigger"
         >
