@@ -4,6 +4,8 @@ Landing page para uma academia (D3FIT).
 
 🔗 **Demo:** [link do deploy] <!-- ex: https://d3fit.vercel.app -->
 
+imagem
+
 ---
 
 ## Sobre o projeto
