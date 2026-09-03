@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  /* Fundo base principal: Grafite Escuro */
+  --background: #1E1D1B;
+  /* Texto principal: Osso / Off-white */
+  --foreground: #F2EFE9;
+
+  /* Superfície de Cards: Grafite elevado */
+  --card: #252421;
+  --card-foreground: #F2EFE9;
+
+  --popover: #252421;
+  --popover-foreground: #F2EFE9;
+
+  /* Accent Primário: Vermelho Sinal */
+  --primary: #E3402D;
+  --primary-foreground: #FFFFFF;
+
+  /* Accent Secundário: Amarelo Mostarda */
+  --secondary: #D9A62E;
+  --secondary-foreground: #1E1D1B;
+
+  /* Fundo Alternativo: Marinho Profundo */
+  --muted: #14202B;
+  /* Texto Secundário: Cinza-Aço legível */
+  --muted-foreground: #9CA3AF;
+
+  /* Superfície de Destaque Alternativo */
+  --accent: #14202B;
+  --accent-foreground: #F2EFE9;
+
+  --destructive: #E3402D;
+  --destructive-foreground: #FFFFFF;
+
+  /* Bordas e Inputs: Cinza-Aço */
+  --border: rgba(91, 97, 105, 0.35);
+  --input: rgba(91, 97, 105, 0.45);
+  --ring: #E3402D;
+  --radius: 0.75rem;
+
+  /* Paleta D3FIT */
+  --color-graphite: #1E1D1B;
+  --color-navy: #14202B;
+  --color-bone: #F2EFE9;
+  --color-signal: #E3402D;
+  --color-steel: #5B6169;
+  --color-mustard: #D9A62E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-graphite: var(--color-graphite);
+  --color-navy: var(--color-navy);
+  --color-bone: var(--color-bone);
+  --color-signal: var(--color-signal);
+  --color-steel: var(--color-steel);
+  --color-mustard: var(--color-mustard);
+
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1E1D1B;
+}
+::-webkit-scrollbar-thumb {
+  background: #5B6169;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E3402D;
+}
+
+/* Shimmer Animation for CTA Buttons */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  30%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3.5s ease-in-out infinite;
+}
+
