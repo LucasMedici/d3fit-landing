@@ -8,7 +8,7 @@ import CMSSliderPro from "@/components/ui/CMSSliderPro"
 import { ScrollReveal } from "@/components/shared/ScrollReveal"
 
 export function ModalitiesCarousel() {
-  const images = ["/musculacao.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg"]
+  const images = ["/treino-musculacao.jpg", "/treino-funcional.jpg", "/treino-grupo.jpg", "/hero2.jpg", "/hero1.jpg", "/hero2.jpg"]
 
   const mobileCards = (
     <div className="flex gap-4 w-full">
